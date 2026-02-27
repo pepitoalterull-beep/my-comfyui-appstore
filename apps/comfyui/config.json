@@ -1,0 +1,19 @@
+{
+  "name": "ComfyUI",
+  "id": "comfyui",
+  "description": "A powerful and modular image generation GUI.",
+  "version": "latest",
+  "tipi_version": 1,
+  "short_desc": "Workflow GUI",
+  "author": "comfyanonymous",
+  "source": "https://github.com/comfyanonymous/ComfyUI",
+  "categories": ["ai", "utilities"],
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8188,
+  "supported_architectures": ["amd64", "arm64"],
+  "min_tipi_version": "4.0.0",
+  "form_fields": [],
+  "created_at": 1691943801422,
+  "updated_at": 1691943801422
+}
