@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "services": [
+    {
+      "name": "comfyui",
+      "image": "yanwk/comfyui-boot:cu128-megapak",
+      "isMain": true,
+      "internalPort": 8188,
+      "environment": [
+        {
+          "key": "CLI_ARGS",
+          "value": "--listen 0.0.0.0"
+        }
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/storage",
+          "containerPath": "/root"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/models",
+          "containerPath": "/root/ComfyUI/models"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/output",
+          "containerPath": "/root/ComfyUI/output"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/input",
+          "containerPath": "/root/ComfyUI/input"
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/workflows",
+          "containerPath": "/root/ComfyUI/user/default/workflows"
+        }
+      ],
+      "deploy": {
+        "resources": {
+          "reservations": {
+            "devices": [
+              {
+                "capabilities": ["gpu"],
+                "driver": "nvidia",
+                "count": 1
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
